@@ -34,14 +34,18 @@
                     <div class="col-lg-3 col-md-6 max-width">
 
                         <div class="jumbotron">
-                        <div class="text-center mb-3">
-                            <button id="sensor-turnon" class="btn btn-success btn-block">Ligar Sensor</button>
-                            <button id="sensor-turnoff" class="btn btn-danger btn-block">Desligar Sensor</button>
-                        </div>
-                        <div class="text-center mb-3">
-                            <button id="turnon" class="btn btn-success btn-block">Ligar Esteiras</button>
-                            <button id="turnoff" class="btn btn-danger btn-block">Desligar Esteiras</button>
-                        </div>
+                        <div class="mb-3 row">
+                                <div class="text-center col-md-6">
+                                    Sensor<br>
+                                    <button id="sensor-turnon" class="btn btn-sm btn-success"><img class="turn-off" src="{{ url_for('static', filename='img/power.png') }}" alt=""></button>
+                                    <button id="sensor-turnoff" class="btn btn-sm btn-danger"><img class="turn-off" src="{{ url_for('static', filename='img/power.png') }}" alt=""></button>
+                                </div>
+                                <div class="text-center col-md-6">
+                                    Esteiras<br>
+                                    <button id="turnon" class="btn btn-sm btn-success"><img class="turn-off" src="{{ url_for('static', filename='img/power.png') }}" alt=""></button>
+                                    <button id="turnoff" class="btn btn-sm btn-danger"><img class="turn-off" src="{{ url_for('static', filename='img/power.png') }}" alt=""></button>
+                                </div>
+                            </div>
 
                             <h4 class="mb-3">HSV - High</h4>
 
