@@ -1,3 +1,3 @@
 # goleiroUI
 
-https://rawgit.com/adoreleon/goleiroUI/master/index.html
+http://htmlpreview.github.io/?https://github.com/adoreleon/goleiroUI/blob/master/index.html
