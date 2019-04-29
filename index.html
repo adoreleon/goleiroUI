@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="static/css/style.css" rel="stylesheet"/>
+    <link href="static/css/mat.css" rel="stylesheet"/>
+
+    <!-- Our Custom CSS -->
+     <link rel="stylesheet"  href="static/css/star-admin/style.css">
+
+    <link href="static/css/roboto.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/font-awesome.css">
+
+    <title>Diadel Ore Processing App</title>
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- Page Content  -->
+        <div id="content">
+            <div class="container-fluid my-3 px-4">
+                <div class="row ">
+                    <div class="col-lg-3 col-md-6 max-width">
+
+                        <div class="jumbotron">
+                        <div class="text-center mb-3">
+                            <button id="sensor-turnon" class="btn btn-success btn-block">Ligar Sensor</button>
+                            <button id="sensor-turnoff" class="btn btn-danger btn-block">Desligar Sensor</button>
+                        </div>
+                        <div class="text-center mb-3">
+                            <button id="turnon" class="btn btn-success btn-block">Ligar Esteiras</button>
+                            <button id="turnoff" class="btn btn-danger btn-block">Desligar Esteiras</button>
+                        </div>
+
+                            <h4 class="mb-3">HSV - High</h4>
+
+                            <div class="color-picker-container my-2">
+
+
+                                <!--div id="hsl-selected-color-back1" class="">
+                                    <div id="hsl-selected-color1"></div>
+                                </div-->
+
+
+
+                                <div class="slider-group" data-hsv-range="high">
+                                    <div class="slider-container ">
+                                        <label>hue</label>
+                                        <input type="number" id="number-h1" data-mirror-on="slider-hl" min="0" max="255" step="1" value="11" />
+                                        <input type="range" id="slider-h1" data-hsv-letter="h" data-mirror-on="number-hl" min="0" max="255" step="1" value="11"/>
+
+                                    </div>
+                                    <div class="slider-container ">
+                                        <label>saturation</label>
+                                        <input type="number" id="number-s1" data-mirror-on="slider-s1" min="0" max="255" step="1" value="12"/>
+                                        <input type="range" id="slider-s1" data-hsv-letter="s" data-mirror-on="number-s1" min="0" max="255" step="1" value="12"/>
+
+                                    </div>
+                                    <div class="slider-container">
+                                        <label>Value</label>
+                                        <input type="number" id="number-l1" data-mirror-on="slider-l1" min="0" max="255" step="1" value="13"/>
+                                        <input type="range" id="slider-l1" data-hsv-letter="v" data-mirror-on="number-l1" min="0" max="255" step="1" value="13"/>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h4 class="mb-3 mt-5">HSV - Low</h4>
+
+                            <div class="color-picker-container my-2">
+
+
+                                <!--div id="hsl-selected-color-back" class="">
+                                    <div id="hsl-selected-color"></div>
+                                </div-->
+
+
+
+                                <div class="slider-group" data-hsv-range="low">
+                                    <div class="slider-container">
+                                        <label>hue</label>
+                                        <input type="number" id="number-hh" data-mirror-on="slider-hh" min="0" max="255" step="1" value="1"/>
+                                        <input type="range" id="slider-hh" data-hsv-letter="h" data-mirror-on="number-hh" min="0" max="255" step="1" value="1"/>
+
+                                    </div>
+                                    <div class="slider-container ">
+                                        <label>saturation</label>
+                                        <input type="number" id="number-sh" data-mirror-on="slider-sh" min="0" max="255" step="1" value="2"/>
+                                        <input type="range" id="slider-sh" data-hsv-letter="s" data-mirror-on="number-sh" min="0" max="255" step="1" value="2"/>
+
+                                    </div>
+                                    <div class="slider-container">
+                                        <label>Value</label>
+                                        <input type="number" id="number-lh" data-mirror-on="slider-lh" min="0" max="255" step="1" value="3"/>
+                                        <input type="range" id="slider-lh" data-hsv-letter="v" data-mirror-on="number-lh" min="0" max="255" step="1" value="3"/>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-9 col-md-9">
+                        <div class="jumbotron">
+                            <h4 class="mb-3">Video feed</h4>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <div>
+                                    <img id="bg" class="embed-responsive-item" src="https://via.placeholder.com/1024x786.png">
+                                </div>
+                            </div>
+                            <!--h5 class="mb-3 mt-5 mb-3">Screenshots</h5>
+                            <div class="row  img-aligne-new">
+                                <div class="col-md-3 col-6">
+                                    <div class="pos-rel">
+
+                                        <img src="img/item.png" class="img-fluid img-he-wi my-2" data-toggle="modal"
+                                            data-target="#myModal">
+
+                                        <i class="fa fa-search-plus lg pos-rel-new"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <img src="img/item.png" class="img-fluid img-he-wi my-2" data-toggle="modal"
+                                        data-target="#myModal">
+                                         <i class="fa fa-search-plus lg pos-rel-new"></i>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <img src="img/item.png" class="img-fluid img-he-wi my-2" data-toggle="modal"
+                                        data-target="#myModal">
+                                         <i class="fa fa-search-plus lg pos-rel-new"></i>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <img src="img/item.png" class="img-fluid img-he-wi my-2" data-toggle="modal"
+                                        data-target="#myModal">
+                                         <i class="fa fa-search-plus lg pos-rel-new " id="clickModel"></i>
+                                </div>
+                            </div-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="static/js/jquery-3.4.0.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#turnon").click(function() {
+                $.get("{{ url_for('turnon')}}");
+            });
+
+            $("#turnoff").click(function() {
+                $.get("{{ url_for('turnoff')}}");
+            });
+
+            $("#sensor-turnon").click(function() {
+                $.get("{{ url_for('sensorturnon')}}");
+            });
+
+            $("#sensor-turnoff").click(function() {
+                $.get("{{ url_for('sensorturnoff')}}");
+            });
+
+            $(".slider-container > input[type='range']").each(function() {
+                $(this).on("input", function() {
+                    $(this).siblings("input[type='number']").val($(this).val());
+                });
+
+                $(this).change("change", function() {
+                    var divGroup = $(this).parent().parent(),
+                        hsv = {
+                            range: divGroup.data("hsv-range")
+                        };
+
+                    divGroup.find("input[type='range']").each(function() {
+                        hsv[$(this).data("hsv-letter")] = $(this).val();
+                    });
+
+                    $.ajax({
+                        url: "{{ url_for('sethsvrange')}}",
+                        data: JSON.stringify(hsv),
+                        method: "POST",
+                        contentType: "application/json"
+                    });
+                })
+            });
+
+            $(".slider-container > input[type='number']").each(function() {
+                $(this).on("input", function () {
+                    $(this).siblings("input[type='range']").val($(this).val());
+                });
+
+                $(this).change("change", function () {
+                    var divGroup = $(this).parent().parent(),
+                        hsv = {
+                            range: divGroup.data("hsv-range")
+                        };
+
+                    divGroup.find("input[type='range']").each(function () {
+                        hsv[$(this).data("hsv-letter")] = $(this).val();
+                    });
+
+                    $.ajax({
+                        url: "{{ url_for('sethsvrange')}}",
+                        data: JSON.stringify(hsv),
+                        method: "POST",
+                        contentType: "application/json"
+                    });
+                })
+            });
+        });
+    </script>
+</body>
+
+</html>
